@@ -12,7 +12,33 @@ class FamilyStructure:
     def __init__(self, last_name):
        self.last_name = last_name
        self._next_id = 1
-       self._members = []
+       self._members = [
+           { 
+               "age": 33,
+        "first_name": "John",
+        "last_name": "Jackson",
+        "id": 1,
+        "lucky_numbers": [
+             7, 13, 22
+        ]
+        },
+        {
+            "age": 35,
+        "first_name": "Jane",
+        "last_name": "Jackson"
+        "id": 2,
+        "lucky_numbers": [
+             10, 14, 3
+        ]
+        },{
+                "age": 5,
+        "first_name": "Jimmy",
+        "last_name": "Jackson"
+        "id": 3,
+        "lucky_numbers": [
+            1
+        ]
+        }]
 
     # read-only: Use this method to generate random members ID's when adding members into the list
     def _generateId(self):
@@ -29,8 +55,8 @@ class FamilyStructure:
         for i in range(len(self._members)):
             if self._members[i]["id"] == id:
                 del self._members[i]
-                break  # Aquí es donde se detiene después de eliminar el primer miembro
-        return self._members  # Esto devuelve la lista después de eliminar el primer miembro
+                break  
+        return self._members  
 
         
     def get_member(self, id):
